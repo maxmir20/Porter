@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "description": "Porterville Departments",
+    "name": "Department",
+    "version": "2",
+    "enumerationValues": [
+      {
+        "value": "Fire Department",
+        "synonyms": [
+          "Fire",
+          "Fire Station"
+        ]
+      },
+      {
+        "value": "Parks And Leisure",
+        "synonyms": [
+          "Parks and Recreation",
+          "Parks",
+          "Leisure",
+          "Recreation",
+          "Parks and Rec",
+          "Rec",
+          "Parks Department"
+        ]
+      },
+      {
+        "value": "Code Enforcement",
+        "synonyms": [
+          "Code",
+          "Enforcement"
+        ]
+      },
+      {
+        "value": "City of Porterville",
+        "synonyms": [
+          "Town Hall",
+          "City Hall"
+        ]
+      },
+      {
+        "value": "Public Works"
+      },
+      {
+        "value": "Police",
+        "synonyms": [
+          "Cops",
+          "Law Enforcement"
+        ]
+      },
+      {
+        "value": "DMV",
+        "synonyms": [
+          "Department of Motor Vehicles",
+          "Cars",
+          "Vehicles"
+        ]
+      },
+      {
+        "value": "Business Licenses",
+        "synonyms": [
+          "Licenses"
+        ]
+      },
+      {
+        "value": "ADA Exterior Wheelchair Ramp Accessibility Program",
+        "synonyms": [
+          "ADA",
+          "Wheelchair",
+          "Accessibility",
+          "Ramp Accessibility",
+          "Wheelchair Ramp",
+          "Wheelchair Accessibility"
+        ]
+      },
+      {
+        "value": "First Time Home Buyers Loan Program",
+        "synonyms": [
+          "Home Buyer",
+          "Home Buyers",
+          "Buyers Loan",
+          "Home Loan",
+          "First Time Loan"
+        ]
+      },
+      {
+        "value": "Community Development",
+        "synonyms": [
+          "Community Outreach",
+          "Community Department"
+        ]
+      },
+      {
+        "value": "Home Rehabilitation",
+        "synonyms": [
+          "Home Rehab",
+          "Rehabilitation",
+          "Home Renovation"
+        ]
+      },
+      {
+        "value": "Economic Development",
+        "synonyms": [
+          "Economic Department",
+          "Economic",
+          "Economics"
+        ]
+      },
+      {
+        "value": "Airport"
+      },
+      {
+        "value": "Utility Service",
+        "synonyms": [
+          "Utility Works",
+          "Utility",
+          "Utilities"
+        ]
+      },
+      {
+        "value": "Building Permits",
+        "synonyms": [
+          "Buildings",
+          "Permits",
+          "Building Licenses"
+        ]
+      },
+      {
+        "value": "Transit Department",
+        "synonyms": [
+          "TransPort",
+          "Transportation"
+        ]
+      },
+      {
+        "value": "Animal Control"
+      }
+    ],
+    "valueSelectionStrategy": "TOP_RESOLUTION"
+  }
+}

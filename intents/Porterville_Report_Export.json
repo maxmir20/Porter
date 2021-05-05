@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Porterville_Report",
+    "version": "5",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [
+      "Where can I report {myPorterville}",
+      "I would like to report {myPorterville}",
+      "Report {myPorterville}",
+      "How can I report {myPorterville}"
+    ],
+    "slots": [
+      {
+        "sampleUtterances": [],
+        "slotType": "Porterville_Redirect",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "What is the event?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}",
+          "maxAttempts": 3
+        },
+        "priority": 1,
+        "name": "myPorterville"
+      }
+    ],
+    "conclusionStatement": {
+      "messages": [
+        {
+          "groupNumber": 1,
+          "contentType": "PlainText",
+          "content": "Please log your issue in the myPorterville app. Follow this link - http://www.ci.porterville.ca.us/myPorterville.cfm"
+        }
+      ]
+    },
+    "slotTypes": [
+      {
+        "name": "Porterville_Redirect",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "itinerant vendor",
+            "synonyms": [
+              "solicitor",
+              "peddler"
+            ]
+          },
+          {
+            "value": "weed abatement",
+            "synonyms": [
+              "marijuana",
+              "weed"
+            ]
+          },
+          {
+            "value": "street sweeping"
+          },
+          {
+            "value": "vehicles parked on lawn",
+            "synonyms": [
+              "lawn parked"
+            ]
+          },
+          {
+            "value": "garbage collection",
+            "synonyms": [
+              "illegal dumping",
+              "garbage"
+            ]
+          },
+          {
+            "value": "fireworks",
+            "synonyms": [
+              "firework",
+              "pyrotechnics"
+            ]
+          },
+          {
+            "value": "barking dog",
+            "synonyms": [
+              "dog",
+              "barking",
+              "animal barking",
+              "noisy pet"
+            ]
+          },
+          {
+            "value": "code enforcement"
+          },
+          {
+            "value": "street light issue"
+          },
+          {
+            "value": "yard sale signage",
+            "synonyms": [
+              "signage"
+            ]
+          },
+          {
+            "value": "graffiti"
+          },
+          {
+            "value": "signs maintenance issue",
+            "synonyms": [
+              "signs"
+            ]
+          },
+          {
+            "value": "animals",
+            "synonyms": [
+              "unauthorize species",
+              "roosters"
+            ]
+          },
+          {
+            "value": "abandoned vehicle"
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      }
+    ]
+  }
+}

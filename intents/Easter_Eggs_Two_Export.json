@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Easter_Eggs_Two",
+    "version": "1",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [
+      "You're nice",
+      "You're great",
+      "You are so cool",
+      "How cool",
+      "You are fun",
+      "You are awesome",
+      "You are amazing"
+    ],
+    "slots": [],
+    "conclusionStatement": {
+      "messages": [
+        {
+          "groupNumber": 1,
+          "contentType": "PlainText",
+          "content": "Thank you! You're awesome too :)"
+        }
+      ]
+    },
+    "slotTypes": []
+  }
+}

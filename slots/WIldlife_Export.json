@@ -1,0 +1,17 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "WIldlife",
+    "version": "1",
+    "enumerationValues": [
+      {
+        "value": "wildfire"
+      }
+    ],
+    "valueSelectionStrategy": "ORIGINAL_VALUE"
+  }
+}

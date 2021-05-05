@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Directory_Help_Intent",
+    "version": "1",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [
+      "Help with directory",
+      "directory help"
+    ],
+    "slots": [],
+    "conclusionStatement": {
+      "messages": [
+        {
+          "groupNumber": 1,
+          "contentType": "PlainText",
+          "content": "To use the directory, try searching for a city department (e.g. Fire Department, Parks and Leisure, City Hall) and a type of contact information (phone number, email, address, etc.). Some variations of this question might be:  \"What is the address of the Police?\", \"Public Works hours\", or \"I have a question about Animal Control\""
+        }
+      ]
+    },
+    "slotTypes": []
+  }
+}

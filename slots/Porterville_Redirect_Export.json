@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Porterville_Redirect",
+    "version": "1",
+    "enumerationValues": [
+      {
+        "value": "itinerant vendor",
+        "synonyms": [
+          "solicitor",
+          "peddler"
+        ]
+      },
+      {
+        "value": "weed abatement",
+        "synonyms": [
+          "marijuana",
+          "weed"
+        ]
+      },
+      {
+        "value": "street sweeping"
+      },
+      {
+        "value": "vehicles parked on lawn",
+        "synonyms": [
+          "lawn parked"
+        ]
+      },
+      {
+        "value": "garbage collection",
+        "synonyms": [
+          "illegal dumping",
+          "garbage"
+        ]
+      },
+      {
+        "value": "fireworks",
+        "synonyms": [
+          "firework",
+          "pyrotechnics"
+        ]
+      },
+      {
+        "value": "barking dog",
+        "synonyms": [
+          "dog",
+          "barking",
+          "animal barking",
+          "noisy pet"
+        ]
+      },
+      {
+        "value": "code enforcement"
+      },
+      {
+        "value": "street light issue"
+      },
+      {
+        "value": "yard sale signage",
+        "synonyms": [
+          "signage"
+        ]
+      },
+      {
+        "value": "graffiti"
+      },
+      {
+        "value": "signs maintenance issue",
+        "synonyms": [
+          "signs"
+        ]
+      },
+      {
+        "value": "animals",
+        "synonyms": [
+          "unauthorize species",
+          "roosters"
+        ]
+      },
+      {
+        "value": "abandoned vehicle"
+      }
+    ],
+    "valueSelectionStrategy": "TOP_RESOLUTION"
+  }
+}

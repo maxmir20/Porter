@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Wildfire",
+    "version": "4",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [
+      "What do I do in case of a {wildfiree}",
+      "I want to know more about {wildfiree}"
+    ],
+    "slots": [
+      {
+        "sampleUtterances": [],
+        "slotType": "WIldlife",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Optional",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "e.g. What city?"
+            }
+          ],
+          "maxAttempts": 2
+        },
+        "priority": 1,
+        "name": "wildfiree"
+      }
+    ],
+    "conclusionStatement": {
+      "messages": [
+        {
+          "groupNumber": 1,
+          "contentType": "PlainText",
+          "content": "Please visit - https://www.ready.gov/wildfires"
+        }
+      ]
+    },
+    "slotTypes": [
+      {
+        "name": "WIldlife",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "wildfire"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      }
+    ]
+  }
+}

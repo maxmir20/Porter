@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "FallBack_Intent_Builtin",
+    "version": "1",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [],
+    "slots": [],
+    "parentIntentSignature": "AMAZON.FallbackIntent",
+    "conclusionStatement": {
+      "messages": [
+        {
+          "groupNumber": 1,
+          "contentType": "PlainText",
+          "content": "Sorry, I didn't quite get that. Please send \"Reset\", and then rephrase your question."
+        }
+      ]
+    },
+    "slotTypes": []
+  }
+}

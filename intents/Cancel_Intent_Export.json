@@ -1,0 +1,32 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Cancel_Intent",
+    "version": "1",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [],
+    "slots": [],
+    "parentIntentSignature": "AMAZON.CancelIntent",
+    "conclusionStatement": {
+      "messages": [
+        {
+          "groupNumber": 1,
+          "contentType": "PlainText",
+          "content": "Sure, let's start over again."
+        },
+        {
+          "groupNumber": 1,
+          "contentType": "PlainText",
+          "content": "Ok, sure."
+        }
+      ]
+    },
+    "slotTypes": []
+  }
+}

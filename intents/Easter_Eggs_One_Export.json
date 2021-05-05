@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Easter_Eggs_One",
+    "version": "4",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [
+      "Who are you",
+      "Who made you",
+      "What are you",
+      "Who is your owner",
+      "Who created you",
+      "Do you have an owner",
+      "Who owns you",
+      "What are you made of",
+      "Are you real",
+      "What is your name",
+      "Do you have a name",
+      "What are you called"
+    ],
+    "slots": [],
+    "conclusionStatement": {
+      "messages": [
+        {
+          "groupNumber": 1,
+          "contentType": "PlainText",
+          "content": "I'm Porter, the Official Chatbot for the City of Porterville! I was built by a team of graduate students at UC Berkeley. You can ask me about city departments, COVID-19, or any general question."
+        }
+      ]
+    },
+    "slotTypes": []
+  }
+}

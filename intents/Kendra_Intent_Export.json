@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Kendra_Intent",
+    "version": "9",
+    "fulfillmentActivity": {
+      "codeHook": {
+        "uri": "arn:aws:lambda:us-east-1:216330692200:function:kendra_lambda",
+        "messageVersion": "1.0"
+      },
+      "type": "CodeHook"
+    },
+    "sampleUtterances": [],
+    "slots": [],
+    "parentIntentSignature": "AMAZON.KendraSearchIntent",
+    "slotTypes": [],
+    "kendraConfiguration": {
+      "kendraIndex": "arn:aws:kendra:us-east-1:216330692200:index/c9f54e1c-7361-48ee-88bf-b72bca483592",
+      "queryFilterString": "",
+      "role": "arn:aws:iam::216330692200:role/aws-service-role/lex.amazonaws.com/AWSServiceRoleForLexBots"
+    }
+  }
+}

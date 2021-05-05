@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Emergency_Events",
+    "version": "2",
+    "enumerationValues": [
+      {
+        "value": "Medical Emergency"
+      },
+      {
+        "value": "Fire"
+      },
+      {
+        "value": "Snake Bite"
+      },
+      {
+        "value": "Food Poisoning"
+      },
+      {
+        "value": "Hazard"
+      }
+    ],
+    "valueSelectionStrategy": "TOP_RESOLUTION"
+  }
+}

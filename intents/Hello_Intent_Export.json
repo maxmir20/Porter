@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "description": "Say hello to BIBot",
+    "name": "Hello_Intent",
+    "version": "3",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [
+      "hello",
+      "hello there",
+      "bro",
+      "dude",
+      "hey",
+      "hey bro",
+      "hey dude",
+      "hey man",
+      "hey there",
+      "hi",
+      "hi there",
+      "BIBot",
+      "yo",
+      "you there"
+    ],
+    "slots": [],
+    "conclusionStatement": {
+      "messages": [
+        {
+          "groupNumber": 1,
+          "contentType": "PlainText",
+          "content": "Hello, how can I help?"
+        }
+      ]
+    },
+    "slotTypes": []
+  }
+}

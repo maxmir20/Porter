@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Emergency_Report",
+    "version": "9",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [
+      "I would like to report {slotOne}",
+      "Report {slotOne}",
+      "Where can I report {slotOne}",
+      "How can I report a {slotOne}"
+    ],
+    "slots": [
+      {
+        "sampleUtterances": [],
+        "slotType": "Emergency_Events",
+        "slotTypeVersion": "2",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "What is the event"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}",
+          "maxAttempts": 2
+        },
+        "priority": 1,
+        "name": "slotOne"
+      }
+    ],
+    "conclusionStatement": {
+      "messages": [
+        {
+          "groupNumber": 1,
+          "contentType": "PlainText",
+          "content": "Call 9-1-1 right away please!"
+        },
+        {
+          "groupNumber": 1,
+          "contentType": "PlainText",
+          "content": "Please call 9-1-1 right away!"
+        }
+      ]
+    },
+    "slotTypes": [
+      {
+        "name": "Emergency_Events",
+        "version": "2",
+        "enumerationValues": [
+          {
+            "value": "Medical Emergency"
+          },
+          {
+            "value": "Fire"
+          },
+          {
+            "value": "Snake Bite"
+          },
+          {
+            "value": "Food Poisoning"
+          },
+          {
+            "value": "Hazard"
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      }
+    ]
+  }
+}

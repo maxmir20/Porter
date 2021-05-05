@@ -1,0 +1,875 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "Porter",
+    "version": "12",
+    "intents": [
+      {
+        "name": "FireDepartment_Intent",
+        "version": "5",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "What services does the {FireSlot} provide",
+          "Where can I get a copy of a {FireSlot}",
+          "How can I request a {FireSlot}",
+          "How can I make my home {FireSlot}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "Fire_Dept",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "e.g. What city?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "FireSlot"
+          }
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "For all information related to Fire please visit - http://www.ci.porterville.ca.us/depts/Fire/"
+            }
+          ]
+        }
+      },
+      {
+        "name": "StopIntent_Builtin",
+        "version": "1",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [],
+        "slots": [],
+        "parentIntentSignature": "AMAZON.StopIntent",
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Ok, stopping now. "
+            },
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Sure, no problem."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Cancel_Intent",
+        "version": "1",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [],
+        "slots": [],
+        "parentIntentSignature": "AMAZON.CancelIntent",
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Sure, let's start over again."
+            },
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Ok, sure."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Kendra_Intent",
+        "version": "9",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:216330692200:function:kendra_lambda",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [],
+        "slots": [],
+        "parentIntentSignature": "AMAZON.KendraSearchIntent",
+        "kendraConfiguration": {
+          "kendraIndex": "arn:aws:kendra:us-east-1:216330692200:index/c9f54e1c-7361-48ee-88bf-b72bca483592",
+          "queryFilterString": "",
+          "role": "arn:aws:iam::216330692200:role/aws-service-role/lex.amazonaws.com/AWSServiceRoleForLexBots"
+        }
+      },
+      {
+        "name": "FallBack_Intent_Builtin",
+        "version": "1",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [],
+        "slots": [],
+        "parentIntentSignature": "AMAZON.FallbackIntent",
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Sorry, I didn't quite get that. Please send \"Reset\", and then rephrase your question."
+            }
+          ]
+        }
+      },
+      {
+        "description": "Say hello to BIBot",
+        "name": "Hello_Intent",
+        "version": "3",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "hello",
+          "hello there",
+          "bro",
+          "dude",
+          "hey",
+          "hey bro",
+          "hey dude",
+          "hey man",
+          "hey there",
+          "hi",
+          "hi there",
+          "BIBot",
+          "yo",
+          "you there"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Hello, how can I help?"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Easter_Eggs_One",
+        "version": "4",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Who are you",
+          "Who made you",
+          "What are you",
+          "Who is your owner",
+          "Who created you",
+          "Do you have an owner",
+          "Who owns you",
+          "What are you made of",
+          "Are you real",
+          "What is your name",
+          "Do you have a name",
+          "What are you called"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "I'm Porter, the Official Chatbot for the City of Porterville! I was built by a team of graduate students at UC Berkeley. You can ask me about city departments, COVID-19, or any general question."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Directory_Intent",
+        "version": "8",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:216330692200:function:Porter_Directory_Intent",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "What is the {Medium} of {Department}",
+          "I want to know when {Department} is {Medium}",
+          "When is {Department} {Medium}",
+          "How do I {Medium} {Department}",
+          "{Department} {Medium}",
+          "I have a question about {Department}",
+          "{Department} info",
+          "{Department} contact",
+          "{Department} contact information",
+          "{Department} information",
+          "Information about {Department}",
+          "Information for {Department}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "Department",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What department would you like to know about?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 2,
+            "name": "Department"
+          },
+          {
+            "sampleUtterances": [],
+            "slotType": "Medium",
+            "slotTypeVersion": "3",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What would you like know about?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 3,
+            "name": "Medium"
+          }
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "via code hook"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Help_Intent_BuiltIn",
+        "version": "3",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [],
+        "slots": [],
+        "parentIntentSignature": "AMAZON.HelpIntent",
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Welcome to Porter, the Official City of Porterville Chatbot. You can ask me about city departments, COVID-19, or any general question."
+            }
+          ]
+        }
+      },
+      {
+        "name": "Emergency_Report",
+        "version": "9",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "I would like to report {slotOne}",
+          "Report {slotOne}",
+          "Where can I report {slotOne}",
+          "How can I report a {slotOne}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "Emergency_Events",
+            "slotTypeVersion": "2",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What is the event"
+                }
+              ],
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}",
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "slotOne"
+          }
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Call 9-1-1 right away please!"
+            },
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Please call 9-1-1 right away!"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Wildfire",
+        "version": "4",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "What do I do in case of a {wildfiree}",
+          "I want to know more about {wildfiree}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "WIldlife",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Optional",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "e.g. What city?"
+                }
+              ],
+              "maxAttempts": 2
+            },
+            "priority": 1,
+            "name": "wildfiree"
+          }
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Please visit - https://www.ready.gov/wildfires"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Easter_Eggs_Two",
+        "version": "1",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "You're nice",
+          "You're great",
+          "You are so cool",
+          "How cool",
+          "You are fun",
+          "You are awesome",
+          "You are amazing"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Thank you! You're awesome too :)"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Directory_Help_Intent",
+        "version": "1",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Help with directory",
+          "directory help"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "To use the directory, try searching for a city department (e.g. Fire Department, Parks and Leisure, City Hall) and a type of contact information (phone number, email, address, etc.). Some variations of this question might be:  \"What is the address of the Police?\", \"Public Works hours\", or \"I have a question about Animal Control\""
+            }
+          ]
+        }
+      },
+      {
+        "name": "StartOver_Intent_Builtin",
+        "version": "1",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [],
+        "slots": [],
+        "parentIntentSignature": "AMAZON.StartOverIntent",
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Certainly. Please type your question again, or rephrase your earlier one."
+            }
+          ]
+        }
+      },
+      {
+        "description": "Let BIBot know you're done",
+        "name": "Goodbye_Intent",
+        "version": "3",
+        "fulfillmentActivity": {
+          "codeHook": {
+            "uri": "arn:aws:lambda:us-east-1:216330692200:function:Porter_Goodbye_Intent",
+            "messageVersion": "1.0"
+          },
+          "type": "CodeHook"
+        },
+        "sampleUtterances": [
+          "all set",
+          "all set thanks",
+          "bye now",
+          "bye",
+          "catch you later",
+          "catch ya later",
+          "good job",
+          "i'm done",
+          "i'm finished",
+          "ok thank you",
+          "ok thanks",
+          "thank you",
+          "thanks",
+          "thanks bro",
+          "thanks dude",
+          "see ya",
+          "see you later"
+        ],
+        "slots": [],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "via code hook"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Porterville_Report",
+        "version": "5",
+        "fulfillmentActivity": {
+          "type": "ReturnIntent"
+        },
+        "sampleUtterances": [
+          "Where can I report {myPorterville}",
+          "I would like to report {myPorterville}",
+          "Report {myPorterville}",
+          "How can I report {myPorterville}"
+        ],
+        "slots": [
+          {
+            "sampleUtterances": [],
+            "slotType": "Porterville_Redirect",
+            "slotTypeVersion": "1",
+            "obfuscationSetting": "NONE",
+            "slotConstraint": "Required",
+            "valueElicitationPrompt": {
+              "messages": [
+                {
+                  "contentType": "PlainText",
+                  "content": "What is the event?"
+                }
+              ],
+              "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[]}",
+              "maxAttempts": 3
+            },
+            "priority": 1,
+            "name": "myPorterville"
+          }
+        ],
+        "conclusionStatement": {
+          "messages": [
+            {
+              "groupNumber": 1,
+              "contentType": "PlainText",
+              "content": "Please log your issue in the myPorterville app. Follow this link - http://www.ci.porterville.ca.us/myPorterville.cfm"
+            }
+          ]
+        }
+      }
+    ],
+    "slotTypes": [
+      {
+        "name": "Fire_Dept",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "fire department"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "description": "Porterville Departments",
+        "name": "Department",
+        "version": "2",
+        "enumerationValues": [
+          {
+            "value": "Fire Department",
+            "synonyms": [
+              "Fire",
+              "Fire Station"
+            ]
+          },
+          {
+            "value": "Parks And Leisure",
+            "synonyms": [
+              "Parks and Recreation",
+              "Parks",
+              "Leisure",
+              "Recreation",
+              "Parks and Rec",
+              "Rec",
+              "Parks Department"
+            ]
+          },
+          {
+            "value": "Code Enforcement",
+            "synonyms": [
+              "Code",
+              "Enforcement"
+            ]
+          },
+          {
+            "value": "City of Porterville",
+            "synonyms": [
+              "Town Hall",
+              "City Hall"
+            ]
+          },
+          {
+            "value": "Public Works"
+          },
+          {
+            "value": "Police",
+            "synonyms": [
+              "Cops",
+              "Law Enforcement"
+            ]
+          },
+          {
+            "value": "DMV",
+            "synonyms": [
+              "Department of Motor Vehicles",
+              "Cars",
+              "Vehicles"
+            ]
+          },
+          {
+            "value": "Business Licenses",
+            "synonyms": [
+              "Licenses"
+            ]
+          },
+          {
+            "value": "ADA Exterior Wheelchair Ramp Accessibility Program",
+            "synonyms": [
+              "ADA",
+              "Wheelchair",
+              "Accessibility",
+              "Ramp Accessibility",
+              "Wheelchair Ramp",
+              "Wheelchair Accessibility"
+            ]
+          },
+          {
+            "value": "First Time Home Buyers Loan Program",
+            "synonyms": [
+              "Home Buyer",
+              "Home Buyers",
+              "Buyers Loan",
+              "Home Loan",
+              "First Time Loan"
+            ]
+          },
+          {
+            "value": "Community Development",
+            "synonyms": [
+              "Community Outreach",
+              "Community Department"
+            ]
+          },
+          {
+            "value": "Home Rehabilitation",
+            "synonyms": [
+              "Home Rehab",
+              "Rehabilitation",
+              "Home Renovation"
+            ]
+          },
+          {
+            "value": "Economic Development",
+            "synonyms": [
+              "Economic Department",
+              "Economic",
+              "Economics"
+            ]
+          },
+          {
+            "value": "Airport"
+          },
+          {
+            "value": "Utility Service",
+            "synonyms": [
+              "Utility Works",
+              "Utility",
+              "Utilities"
+            ]
+          },
+          {
+            "value": "Building Permits",
+            "synonyms": [
+              "Buildings",
+              "Permits",
+              "Building Licenses"
+            ]
+          },
+          {
+            "value": "Transit Department",
+            "synonyms": [
+              "TransPort",
+              "Transportation"
+            ]
+          },
+          {
+            "value": "Animal Control"
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "description": "Type of Directory information you need",
+        "name": "Medium",
+        "version": "3",
+        "enumerationValues": [
+          {
+            "value": "Email",
+            "synonyms": [
+              "Gmail"
+            ]
+          },
+          {
+            "value": "Address",
+            "synonyms": [
+              "Location",
+              "mail"
+            ]
+          },
+          {
+            "value": "Hours",
+            "synonyms": [
+              "Business Hours",
+              "Open",
+              "Available"
+            ]
+          },
+          {
+            "value": "Phone",
+            "synonyms": [
+              "Number",
+              "Reach",
+              "call",
+              "Phone Number"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "Porterville_Redirect",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "itinerant vendor",
+            "synonyms": [
+              "solicitor",
+              "peddler"
+            ]
+          },
+          {
+            "value": "weed abatement",
+            "synonyms": [
+              "marijuana",
+              "weed"
+            ]
+          },
+          {
+            "value": "street sweeping"
+          },
+          {
+            "value": "vehicles parked on lawn",
+            "synonyms": [
+              "lawn parked"
+            ]
+          },
+          {
+            "value": "garbage collection",
+            "synonyms": [
+              "illegal dumping",
+              "garbage"
+            ]
+          },
+          {
+            "value": "fireworks",
+            "synonyms": [
+              "firework",
+              "pyrotechnics"
+            ]
+          },
+          {
+            "value": "barking dog",
+            "synonyms": [
+              "dog",
+              "barking",
+              "animal barking",
+              "noisy pet"
+            ]
+          },
+          {
+            "value": "code enforcement"
+          },
+          {
+            "value": "street light issue"
+          },
+          {
+            "value": "yard sale signage",
+            "synonyms": [
+              "signage"
+            ]
+          },
+          {
+            "value": "graffiti"
+          },
+          {
+            "value": "signs maintenance issue",
+            "synonyms": [
+              "signs"
+            ]
+          },
+          {
+            "value": "animals",
+            "synonyms": [
+              "unauthorize species",
+              "roosters"
+            ]
+          },
+          {
+            "value": "abandoned vehicle"
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      },
+      {
+        "name": "WIldlife",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "wildfire"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      },
+      {
+        "name": "Emergency_Events",
+        "version": "2",
+        "enumerationValues": [
+          {
+            "value": "Medical Emergency"
+          },
+          {
+            "value": "Fire"
+          },
+          {
+            "value": "Snake Bite"
+          },
+          {
+            "value": "Food Poisoning"
+          },
+          {
+            "value": "Hazard"
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      }
+    ],
+    "voiceId": "Matthew",
+    "childDirected": false,
+    "locale": "en-US",
+    "idleSessionTTLInSeconds": 300,
+    "description": "PorterBot - a SQL and Amazon Kendra query bot for the City of Porterville, CA",
+    "clarificationPrompt": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Can you please try again?"
+        },
+        {
+          "contentType": "PlainText",
+          "content": "I didn't get that. Can you say that again but differently?"
+        },
+        {
+          "contentType": "PlainText",
+          "content": "Come again?"
+        },
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, can you please repeat that?"
+        }
+      ],
+      "maxAttempts": 5
+    },
+    "abortStatement": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Sorry, I could not understand. Goodbye."
+        }
+      ]
+    },
+    "detectSentiment": false,
+    "enableModelImprovements": false
+  }
+}

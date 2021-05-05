@@ -1,0 +1,61 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "name": "FireDepartment_Intent",
+    "version": "5",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [
+      "What services does the {FireSlot} provide",
+      "Where can I get a copy of a {FireSlot}",
+      "How can I request a {FireSlot}",
+      "How can I make my home {FireSlot}"
+    ],
+    "slots": [
+      {
+        "sampleUtterances": [],
+        "slotType": "Fire_Dept",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Optional",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "e.g. What city?"
+            }
+          ],
+          "maxAttempts": 2
+        },
+        "priority": 2,
+        "name": "FireSlot"
+      }
+    ],
+    "conclusionStatement": {
+      "messages": [
+        {
+          "groupNumber": 1,
+          "contentType": "PlainText",
+          "content": "For all information related to Fire please visit - http://www.ci.porterville.ca.us/depts/Fire/"
+        }
+      ]
+    },
+    "slotTypes": [
+      {
+        "name": "Fire_Dept",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "fire department"
+          }
+        ],
+        "valueSelectionStrategy": "ORIGINAL_VALUE"
+      }
+    ]
+  }
+}

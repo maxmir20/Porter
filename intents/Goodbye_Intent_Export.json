@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "description": "Let BIBot know you're done",
+    "name": "Goodbye_Intent",
+    "version": "3",
+    "fulfillmentActivity": {
+      "codeHook": {
+        "uri": "arn:aws:lambda:us-east-1:216330692200:function:Porter_Goodbye_Intent",
+        "messageVersion": "1.0"
+      },
+      "type": "CodeHook"
+    },
+    "sampleUtterances": [
+      "all set",
+      "all set thanks",
+      "bye now",
+      "bye",
+      "catch you later",
+      "catch ya later",
+      "good job",
+      "i'm done",
+      "i'm finished",
+      "ok thank you",
+      "ok thanks",
+      "thank you",
+      "thanks",
+      "thanks bro",
+      "thanks dude",
+      "see ya",
+      "see you later"
+    ],
+    "slots": [],
+    "conclusionStatement": {
+      "messages": [
+        {
+          "groupNumber": 1,
+          "contentType": "PlainText",
+          "content": "via code hook"
+        }
+      ]
+    },
+    "slotTypes": []
+  }
+}
