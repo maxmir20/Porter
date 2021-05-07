@@ -24,7 +24,7 @@ An incoming message from a cellphone first gets piped to Amazon Pinpoint, which 
 2. Invokes a lambda function that pulls data from S3 which is further parsed by Athena to pull live data from a database and packaged into a reply, or
 3. Invokes a lambda function that consumes Kendra’s services to use deep learning NLP methods to parse the document store in S3 and reply with an answer, if available. 
 
->> If none of the above intents match, Lex invokes a fallback intent that requests the user to rephrase the query. Each component of this entire stack works in unison with every other component and our current design ensures we maintain a closed-loop dialogue flow between the user and our system.
+If none of the above intents match, Lex invokes a fallback intent that requests the user to rephrase the query. Each component of this entire stack works in unison with every other component and our current design ensures we maintain a closed-loop dialogue flow between the user and our system.
 
 ## Demo
 
