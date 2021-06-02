@@ -1,7 +1,7 @@
 <img width="944" alt="Screen Shot 2021-05-06 at 11 32 00 PM" src="https://user-images.githubusercontent.com/54463500/117407488-7afa1e80-aec3-11eb-8151-ff0792d3ebce.png">
 
 ## What is Porter?
-Porter is an SMS-based chatbot designed to address local citizens' needs for information. From inquiries regarding city departments to parking hours, to general service requests, Porter works just like a trustworthy assistant to help cities save time and get things done. 
+Porter is an SMS-based chatbot designed to address local citizens' needs for information. Porter was designed to be easily accessible as a tool for both citizens and government officials, regardless of technical proficiency. From inquiries regarding city departments to parking hours, to general service requests, Porter works just like a trustworthy assistant to help cities save time and get things done. 
 
 ## How does Porter work?
 
@@ -25,6 +25,20 @@ An incoming message from a cellphone first gets piped to Amazon Pinpoint, which 
 3. Invokes a lambda function that consumes Kendra’s services to use deep learning NLP methods to parse the document store in S3 and reply with an answer, if available. 
 
 If none of the above intents match, Lex invokes a fallback intent that requests the user to rephrase the query. Each component of this entire stack works in unison with every other component and our current design ensures we maintain a closed-loop dialogue flow between the user and our system.
+
+## Features
+
+#### Current
+
+![Current Features](https://user-images.githubusercontent.com/53662441/120541115-5304ba80-c39e-11eb-8911-f6f7e8b78574.png)
+
+Currently, Porter can answer questions regarding directory information, Porterville-specific questions around services or COVID-19, or can direct users to the MyPorterville App for reporting issues.
+
+#### Looking Ahead
+
+![Future Features](https://user-images.githubusercontent.com/53662441/120541293-8cd5c100-c39e-11eb-9e05-5d4c7453f9f5.png)
+
+Looking ahead, Porter was specifically designed on AWS so that it would be compatible with multiple channels, allowing Porter to be hosted on the Porterville government website, official Facebook groups, or even Alexa speakers. Porter can also be easily integrated with multi-lingual translation services. Finally, Porter supports web scrapers that will allow for more dynamic content updates.
 
 ## Demo
 
