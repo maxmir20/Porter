@@ -28,13 +28,13 @@ If none of the above intents match, Lex invokes a fallback intent that requests 
 
 ## Features
 
-#### Current
+### Current
 
 ![Current Features](https://user-images.githubusercontent.com/53662441/120541115-5304ba80-c39e-11eb-8911-f6f7e8b78574.png)
 
 Currently, Porter can answer questions regarding directory information, Porterville-specific questions around services or COVID-19, or can direct users to the MyPorterville App for reporting issues.
 
-#### Looking Ahead
+### Looking Ahead
 
 ![Future Features](https://user-images.githubusercontent.com/53662441/120541293-8cd5c100-c39e-11eb-9e05-5d4c7453f9f5.png)
 
