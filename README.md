@@ -1,7 +1,7 @@
 <img width="944" alt="Screen Shot 2021-05-06 at 11 32 00 PM" src="https://user-images.githubusercontent.com/54463500/117407488-7afa1e80-aec3-11eb-8151-ff0792d3ebce.png">
 
 ## What is Porter?
-[Porter](https://tryporter.weebly.com/) is an SMS-based chatbot designed to address local citizens' needs for information. Porter was designed to be easily accessible as a tool for both citizens and government officials, regardless of technical proficiency. From inquiries regarding city departments to parking hours, to general service requests, Porter works just like a trustworthy assistant to help cities save time and get things done. 
+[Porter](https://tryporter.weebly.com/) is an AWS-powered SMS-based chatbot designed to address local citizens' needs for information. Porter was designed to be easily accessible as a tool for both citizens and government officials, regardless of technical proficiency. From inquiries regarding city departments to parking hours, to general service requests, Porter works just like a trustworthy assistant to help cities save time and get things done. 
 
 ## How does Porter work?
 
